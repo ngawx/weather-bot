@@ -80,7 +80,8 @@ api = tweepy.API(auth)
 tweet = f"[TEST] {alert_type} for {affected_area.split(',')[0]}... {expires}"
 
 try:
-    api.update_with_media(filename, status=tweet)
+    media = api.media_upload(filename)
+api.update_status(status=tweet, media_ids=[media.media_id])
     print("✅ Posted test graphic to Twitter.")
 except Exception as e:
     print(f"❌ Twitter post failed: {e}")
