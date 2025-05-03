@@ -63,7 +63,7 @@ filename = "test_tornado_warning.png"
 canvas.save(filename)
 print(f"✅ Test graphic saved: {filename}")
 
-# --- Twitter Post Test ---
+# --- Twitter Post ---
 TWITTER_API_KEY = os.getenv("TWITTER_API_KEY")
 TWITTER_API_SECRET = os.getenv("TWITTER_API_SECRET")
 TWITTER_ACCESS_TOKEN = os.getenv("TWITTER_ACCESS_TOKEN")
@@ -81,7 +81,8 @@ tweet = f"[TEST] {alert_type} for {affected_area.split(',')[0]}... {expires}"
 
 try:
     media = api.media_upload(filename)
-api.update_status(status=tweet, media_ids=[media.media_id])
+    api.update_status(status=tweet, media_ids=[media.media_id])
     print("✅ Posted test graphic to Twitter.")
 except Exception as e:
     print(f"❌ Twitter post failed: {e}")
+
