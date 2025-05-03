@@ -54,7 +54,8 @@ canvas.paste(badge, (20, 590))
 
 # Footer
 footer = "NORTH GEORGIA WEATHER COMMAND"
-footer_w, _ = draw.textsize(footer, font=font_small)
+bbox = draw.textbbox((0, 0), footer, font=font_small)
+footer_w = bbox[2] - bbox[0]
 draw.text(((800 - footer_w) / 2, 660), footer, fill="white", font=font_small)
 
 # Save
