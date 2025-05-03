@@ -30,7 +30,8 @@ except:
 
 # Top Banner
 draw.rectangle([0, 0, 800, 80], fill=(200, 0, 0))
-title_w, _ = draw.textsize(alert_type, font=font_large)
+bbox = draw.textbbox((0, 0), alert_type, font=font_large)
+title_w = bbox[2] - bbox[0]
 draw.text(((800 - title_w) / 2, 20), alert_type, fill="white", font=font_large)
 
 # Fake map image block
