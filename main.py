@@ -16,9 +16,17 @@ canvas = Image.new("RGB", (800, 700), (30, 30, 30))
 draw = ImageDraw.Draw(canvas)
 
 # Fonts
-font_large = ImageFont.truetype("/Library/Fonts/Arial Bold.ttf", 36)
-font_med = ImageFont.truetype("/Library/Fonts/Arial.ttf", 22)
-font_small = ImageFont.truetype("/Library/Fonts/Arial.ttf", 18)
+from PIL import ImageFont
+
+try:
+    font_large = ImageFont.truetype("DejaVuSans-Bold.ttf", 36)
+    font_med = ImageFont.truetype("DejaVuSans.ttf", 22)
+    font_small = ImageFont.truetype("DejaVuSans.ttf", 18)
+except:
+    font_large = ImageFont.load_default()
+    font_med = ImageFont.load_default()
+    font_small = ImageFont.load_default()
+
 
 # Top Banner
 draw.rectangle([0, 0, 800, 80], fill=(200, 0, 0))
