@@ -19,7 +19,8 @@ ALLOWED_ALERTS = [
     "Winter Storm Warning", "Winter Storm Watch", "Winter Weather Advisory",
     "Wind Chill Warning", "Wind Chill Advisory",
     "Freeze Warning", "Freeze Watch",
-    "Ice Storm Warning"
+    "Ice Storm Warning",
+    "Dense Fog Advisory"
 ]
 
 # Get active alerts from NWS Peachtree City
